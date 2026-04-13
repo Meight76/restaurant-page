@@ -1,0 +1,80 @@
+:root {
+    --light-white: hsl(0 0% 90%);
+    --light-gray: hsl(0 0% 80%);
+    --color-50: #DC143C;
+    --color-100: #C61937;
+    --color-200: #B11B32;
+    --color-300: #9C1C2D;
+    --color-400: #881C28;
+    --color-500: #741C23;
+    --color-600: #601A1E;
+    --color-700: #4E181A;
+    --color-800: #3C1515;
+    --color-900: #2A1110;
+    --color-950: #1B0B08;
+
+}
+
+*,
+*::after,
+*::before {
+    font-family: inherit;
+}
+
+body {
+    display: grid;
+    font-family: sans-serif;
+    height: 100dvh;
+    margin: 0;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "header"
+    "pagContent";
+}
+
+.header {
+    grid-area: header;
+    height: 50px;
+    padding: 8px 10px 8px 10px;
+    background-color: var(--light-white);
+
+    .nav {
+        display: flex;
+        gap: 10px;
+        height: 100%;
+
+        button {
+            background-color: var(--color-50);
+            color: var(--light-white);
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            width: 5%;
+
+            &:hover {
+                background-color: var(--color-200);
+            }
+            &:active {
+                background-color: var(--color-300);
+            }
+        }
+    }
+}
+
+.content {
+    grid-area: pagContent;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+
+    .logo-text {
+        color: var(--color-200);
+        font-weight: 900;
+    }
+
+    svg {
+        width: 300px;
+        align-self: center;
+        fill:var(--color-700) !important;
+    }
+}
