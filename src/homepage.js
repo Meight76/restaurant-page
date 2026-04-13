@@ -17,3 +17,7 @@ export function homepage() {
     ";
     `
 }
+
+export function resetContent() {
+    contentDiv.textContent = "";
+}
