@@ -1,5 +1,6 @@
 :root {
     --light-white: hsl(0 0% 90%);
+    --dark-white: hsl(0 0% 82%);
     --light-gray: hsl(0 0% 80%);
     --color-50: #DC143C;
     --color-100: #C61937;
@@ -34,7 +35,10 @@ body {
 
 .header {
     grid-area: header;
+    position: relative;
+    z-index: 1;
     height: 50px;
+    box-shadow: 0 0 10px hsl(0 0% 0% / 0.3);
     padding: 8px 10px 8px 10px;
     background-color: var(--light-white);
 
@@ -45,6 +49,7 @@ body {
 
         button {
             background-color: var(--color-50);
+            cursor: pointer;
             color: var(--light-white);
             font-weight: 600;
             border: none;
@@ -70,6 +75,56 @@ body {
     .logo-text {
         color: var(--color-200);
         font-weight: 900;
+    }
+
+    #table-div {
+        border-radius: 8px;
+        border: 1px solid black;
+        overflow: hidden;
+    }
+
+    #menu-table {
+        border: 1px solid black;
+        width: 50vw;
+        height: 50vh;
+        border-collapse: collapse;
+
+        td,
+        th {
+            border: 1px solid black;
+            background-color: var(--light-white);
+        }
+
+        tr:nth-child(even) {
+            td{
+                background-color: var(--dark-white);
+            }
+        }
+        tr:hover {
+            td,
+            th {
+                background-color: hsl(from var(--color-50) h s l / 0.1);
+            }
+        }
+
+        .column-cell {
+            background-color: var(--color-100) !important;
+            color: var(--light-white);
+            text-transform: uppercase;
+        }
+
+        td:first-of-type {
+            color:var(--color-700);
+            font-family: cursive;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+        td:last-of-type {
+            color:var(--color-200);
+            font-weight: 800;
+            text-align: center;
+        }
     }
 
     svg {

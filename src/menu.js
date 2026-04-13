@@ -2,6 +2,12 @@ import {contentDiv} from "./index.js";
 
 export function menu() {
 
+    contentDiv.style.alignItems = "center";
+    contentDiv.style.justifyContent = "center";
+
+    const divForTable = document.createElement("div");
+    divForTable.setAttribute("id", "table-div");
+
     // create table element
 
     const table = document.createElement("table");
@@ -26,8 +32,11 @@ export function menu() {
     priceColumn.setAttribute("scope", "col");
     priceColumn.classList.add("column-cell");
 
-    tableHeader.appendChild(nameColumn);
-    tableHeader.appendChild(priceColumn);
+    const tableHeaderRow = document.createElement("tr");
+    tableHeaderRow.appendChild(nameColumn);
+    tableHeaderRow.appendChild(priceColumn);
+
+    tableHeader.appendChild(tableHeaderRow);
 
     const tableBody = document.createElement("tbody");
     tableBody.appendChild(createTr("hamburguer", 9.99));
@@ -41,7 +50,8 @@ export function menu() {
 
     table.appendChild(tableHeader);
     table.appendChild(tableBody);
-    contentDiv.appendChild(table);
+    divForTable.appendChild(table);
+    contentDiv.appendChild(divForTable);
 
 }
 
